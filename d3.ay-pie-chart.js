@@ -26,7 +26,8 @@ define([], function(){
           radius_label: chart_size / 3 + 20,
           percentage: true,
           label_margin: 10,
-          group_data: 0
+          group_data: 0,
+          name: function(d){ return d.name; }
         },
         donut,
         arc,
@@ -146,7 +147,7 @@ define([], function(){
         if (settings.percentage) {
           return true;
         }
-        return e.data.name !== undefined;
+        return settings.name(e.data) !== undefined;
       })
       .attr('class', 'label');
     label_boxes = labels
@@ -154,9 +155,10 @@ define([], function(){
     label_texts = labels
       .append('text').text(function (e) {
         var percentage = (((e.endAngle - e.startAngle) / (2 * Math.PI)) * 100).toFixed(2),
-          label = [];
-        if (e.data.name !== undefined) {
-          label.push(e.data.name);
+            label = [],
+            name = settings.name(e.data);
+        if (name !== undefined) {
+          label.push(name);
         }
         if (settings.percentage) {
           label.push(percentage + '%');
