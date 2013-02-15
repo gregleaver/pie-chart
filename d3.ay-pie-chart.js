@@ -1,11 +1,12 @@
 /**
- * Pie Chart v0.1.0
- * https://github.com/gajus/pie-chart
+ * Pie Chart v0.1.1
+ * https://github.com/gregleaver/pie-chart
+ * Forked from https://github.com/gajus/pie-chart
  *
  * Licensed under the BSD.
  * https://github.com/gajus/pie-chart/blob/master/LICENSE
  *
- * Author: Gajus Kuizinas <g.kuizinas@anuary.com>
+ * Original Author: Gajus Kuizinas <g.kuizinas@anuary.com>
  */
 var ay = ay || {};
 
